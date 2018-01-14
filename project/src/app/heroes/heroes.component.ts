@@ -10,8 +10,6 @@ import { HeroService } from '../hero.service';
 export class HeroesComponent implements OnInit {
   heroes: Hero[];
 
-  selectedHero: Hero;
-
   constructor(private heroService: HeroService) {
     //generalmente, en el constructor no debe haber más que asignaciones de parámetros a propiedades.
     //si se quiere traer datos de un server, hacerlo en ngOnInit().
@@ -19,10 +17,6 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit() {
     this.getHeroes();
-  }
-
-  onSelect(hero: Hero) {
-    this.selectedHero = hero;
   }
 
   //esta versión de getHeroes() espera a tener el observable para emitir el arreglo de héroes.
